@@ -7,7 +7,6 @@ J:\NETCore6\PartyInvites\bin\Debug\net6.0\PartyInvites.deps.json
 J:\NETCore6\PartyInvites\bin\Debug\net6.0\PartyInvites.runtimeconfig.json
 J:\NETCore6\PartyInvites\bin\Debug\net6.0\PartyInvites.dll
 J:\NETCore6\PartyInvites\bin\Debug\net6.0\PartyInvites.pdb
-J:\NETCore6\PartyInvites\obj\Debug\net6.0\PartyInvites.csproj.AssemblyReference.cache
 J:\NETCore6\PartyInvites\obj\Debug\net6.0\PartyInvites.GeneratedMSBuildEditorConfig.editorconfig
 J:\NETCore6\PartyInvites\obj\Debug\net6.0\PartyInvites.AssemblyInfoInputs.cache
 J:\NETCore6\PartyInvites\obj\Debug\net6.0\PartyInvites.AssemblyInfo.cs
@@ -52,3 +51,4 @@ D:\IT\Programing\NetCore6\PartyInvites\.NetCore6Training\obj\Debug\net6.0\PartyI
 D:\IT\Programing\NetCore6\PartyInvites\.NetCore6Training\obj\Debug\net6.0\PartyInvites.genruntimeconfig.cache
 D:\IT\Programing\NetCore6\PartyInvites\.NetCore6Training\obj\Debug\net6.0\ref\PartyInvites.dll
 D:\IT\Programing\NetCore6\PartyInvites\.NetCore6Training\obj\Debug\net6.0\PartyInvites.csproj.AssemblyReference.cache
+J:\NETCore6\PartyInvites\obj\Debug\net6.0\PartyInvites.csproj.AssemblyReference.cache
