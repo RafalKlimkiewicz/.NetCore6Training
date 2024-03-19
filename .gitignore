@@ -1,2 +1,6 @@
 /.vs
 .vs/
+*.nuget.dgspec.json
+*.nuget.g.props
+*.nuget.g.targets
+project.nuget.cache
