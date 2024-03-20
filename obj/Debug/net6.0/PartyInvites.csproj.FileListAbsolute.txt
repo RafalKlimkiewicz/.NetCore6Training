@@ -51,4 +51,3 @@ D:\IT\Programing\NetCore6\PartyInvites\.NetCore6Training\obj\Debug\net6.0\PartyI
 D:\IT\Programing\NetCore6\PartyInvites\.NetCore6Training\obj\Debug\net6.0\PartyInvites.genruntimeconfig.cache
 D:\IT\Programing\NetCore6\PartyInvites\.NetCore6Training\obj\Debug\net6.0\ref\PartyInvites.dll
 D:\IT\Programing\NetCore6\PartyInvites\.NetCore6Training\obj\Debug\net6.0\PartyInvites.csproj.AssemblyReference.cache
-J:\NETCore6\PartyInvites\obj\Debug\net6.0\PartyInvites.csproj.AssemblyReference.cache
