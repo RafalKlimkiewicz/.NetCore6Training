@@ -38,5 +38,12 @@
                     yield return product;
             }
         }
+
+        public static IEnumerable<Product?> Filter(this IEnumerable<Product?> productEnum, Func<Product?, bool> selector)
+        {
+            foreach (var product in productEnum)
+                if (selector(product))
+                    yield return product;
+        }
     }
 }

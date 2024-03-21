@@ -1,16 +1,19 @@
 ﻿//using Microsoft.AspNetCore.Mvc;
 //using LanguageFeatures.Models;
-
-using System.Reflection.Metadata.Ecma335;
 using LanguageFeatures.Extensions;
 
 namespace LanguageFeatures.Controllers
 {
     public class HomeController : Controller
     {
+        bool FilterByPrice(Product? product)
+        {
+            return (product?.Price ?? 0) >= 20;
+        }
+
         public ViewResult Index()
         {
-            Product?[] products = Product.GetProducts();
+            Product?[]? products = Product.GetProducts();
 
             //1
             //var p = products[0];
@@ -68,10 +71,10 @@ namespace LanguageFeatures.Controllers
             //}
 
             //8
-            ShoppingCart cart = new()
-            {
-                Products = Product.GetProducts()
-            };
+            //ShoppingCart cart = new()
+            //{
+            //    Products = Product.GetProducts()
+            //};
 
             //decimal cartTotal = cart.TotalPrices();
 
@@ -83,10 +86,81 @@ namespace LanguageFeatures.Controllers
                 new Product { Name = "Corner flag", Price = 34.95M}
             };
 
-            var cartTotal = cart.TotalPrices();
+            Func<Product?, bool> nameFilter = delegate (Product? product)
+            {
+                return product?.Name?[0] == 'S';
+            };
+
+            var products2 = new[]
+{
+                new  { Name= "Kajak", Price = 275M},
+                new  { Name = "LifeJacket", Price = 48.95M},
+                new  { Name = "Soccer ball", Price = 19.50M},
+                new  { Name = "Corner flag", Price = 34.95M}
+            };
+
+            //var cartTotal = cart.TotalPrices();
             var arrayTotal = productArray.FilterByPrice(20).TotalPrices();
 
-            return View("Index", new string[] { $"Cart Total: {cartTotal:C2} \n Array Total: {arrayTotal:C2}" });
+            decimal priceFilterTotal = productArray.Filter(FilterByPrice).TotalPrices();
+            decimal nameFilterTotal = productArray.Filter(nameFilter).TotalPrices();
+
+            decimal priceFilterTotalLambda = productArray.Filter(p => (p?.Price ?? 0) >= 20).TotalPrices();
+            decimal nameFilterTotalLambda = productArray.Filter(p => p?.Name?[0] == 'S').TotalPrices();
+
+            //return View("Index", products2.Select(p => p.Name));
+            //return View("Index", products2.Select(p => p.GetType().Name));
+
+            IProductSelection cart = new ShoppingCart(
+                new Product { Name = "Kajak", Price = 275M },
+                new Product { Name = "LifeJacket", Price = 48.95M },
+                new Product { Name = "Soccer ball", Price = 19.50M },
+                new Product { Name = "Corner flag", Price = 34.95M });
+
+            return View(productArray.Select(p => $"{nameof(p.Name)}: {p.Name}, {nameof(p.Price)}: {p.Price}"));
+            return View(cart.Names);
+
+            return View("Index", new string[] {
+                GetFormatedString(arrayTotal, nameof(arrayTotal)),
+                GetFormatedString(priceFilterTotal, nameof(priceFilterTotal)),
+                GetFormatedString(nameFilterTotal, nameof(nameFilterTotal)),
+                GetFormatedString(priceFilterTotalLambda, nameof(priceFilterTotalLambda)),
+                GetFormatedString(nameFilterTotalLambda, nameof(nameFilterTotalLambda))
+            });
+        }
+
+        public async Task<ViewResult> Index2()
+        {
+            long? length = await MyAsyncMethod.GetPageLengthAsync();
+
+            return View("Index", new string[] { $"Length: {length}" });
+        }
+
+        public async Task<ViewResult> Index3()
+        {
+            List<string> output = new();
+
+            foreach (var len in await MyAsyncMethod.GetPageLengthsAsync(output, "http://apress.com", "http://microsoft.com", "http://amazon.com"))
+            {
+                output.Add($"Page length: {len}");
+            }
+
+            return View("Index", output);
+        }
+
+        public async Task<ViewResult> Index4()
+        {
+            List<string> output = new();
+
+            await foreach (var len in MyAsyncMethod.GetPageLengthsAsync2(output, "http://apress.com", "http://microsoft.com", "http://amazon.com"))
+                output.Add($"Page length: {len}");
+
+            return View("Index", output);
+        }
+
+        private string GetFormatedString(decimal value, string variableName)
+        {
+            return $"{variableName}: {value:C2}";
         }
     }
 }
