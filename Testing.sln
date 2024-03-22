@@ -3,20 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleApp", "SimpleApp\SimpleApp.csproj", "{867EC77E-DAC5-463B-AF17-F2040D2AC46D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleApp", "SimpleApp\SimpleApp.csproj", "{867EC77E-DAC5-463B-AF17-F2040D2AC46D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleApp.Tests", "SimpleApp.Tests\SimpleApp.Tests.csproj", "{2CC1DEA3-D3F7-4CC3-9191-4C152B9235C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{867EC77E-DAC5-463B-AF17-F2040D2AC46D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{867EC77E-DAC5-463B-AF17-F2040D2AC46D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{867EC77E-DAC5-463B-AF17-F2040D2AC46D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{867EC77E-DAC5-463B-AF17-F2040D2AC46D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC1DEA3-D3F7-4CC3-9191-4C152B9235C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC1DEA3-D3F7-4CC3-9191-4C152B9235C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC1DEA3-D3F7-4CC3-9191-4C152B9235C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC1DEA3-D3F7-4CC3-9191-4C152B9235C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
