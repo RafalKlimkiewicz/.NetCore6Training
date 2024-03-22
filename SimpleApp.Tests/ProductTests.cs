@@ -11,9 +11,9 @@ namespace SimpleApp.Tests
             var p = new Product { Name = "Test", Price = 100M };
 
             //Act
-
             p.Name = "New Name";
 
+            //Assert
             Assert.Equal("New Name", p.Name);
         }
 
@@ -27,7 +27,7 @@ namespace SimpleApp.Tests
             p.Price = 200M;
 
             //Assert
-            Assert.Equal(100M, p.Price);
+            Assert.Equal(200M, p.Price);
         }
 
     }

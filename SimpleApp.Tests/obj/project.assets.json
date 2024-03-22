@@ -6128,19 +6128,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\RK\\.nuget\\packages\\": {}
+    "C:\\Users\\klime\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\IT\\Programing\\NetCore6\\PartyInvites\\.NetCore6Training\\SimpleApp.Tests\\SimpleApp.Tests.csproj",
+      "projectUniqueName": "J:\\NETCore6\\Testing\\SimpleApp.Tests\\SimpleApp.Tests.csproj",
       "projectName": "SimpleApp.Tests",
-      "projectPath": "D:\\IT\\Programing\\NetCore6\\PartyInvites\\.NetCore6Training\\SimpleApp.Tests\\SimpleApp.Tests.csproj",
-      "packagesPath": "C:\\Users\\RK\\.nuget\\packages\\",
-      "outputPath": "D:\\IT\\Programing\\NetCore6\\PartyInvites\\.NetCore6Training\\SimpleApp.Tests\\obj\\",
+      "projectPath": "J:\\NETCore6\\Testing\\SimpleApp.Tests\\SimpleApp.Tests.csproj",
+      "packagesPath": "C:\\Users\\klime\\.nuget\\packages\\",
+      "outputPath": "J:\\NETCore6\\Testing\\SimpleApp.Tests\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\RK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\klime\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6148,14 +6153,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\IT\\Programing\\NetCore6\\PartyInvites\\.NetCore6Training\\SimpleApp\\SimpleApp.csproj": {
-              "projectPath": "D:\\IT\\Programing\\NetCore6\\PartyInvites\\.NetCore6Training\\SimpleApp\\SimpleApp.csproj"
+            "J:\\NETCore6\\Testing\\SimpleApp\\SimpleApp.csproj": {
+              "projectPath": "J:\\NETCore6\\Testing\\SimpleApp\\SimpleApp.csproj"
             }
           }
         }
