@@ -10,3 +10,5 @@ project.nuget.cache
 *.user
 *.userosscache
 *.sln.docstates
+**/obj/
+**/bin/
