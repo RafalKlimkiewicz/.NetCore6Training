@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Moq;
 using SimpleApp.Controllers;
 using SimpleApp.Models;
 
@@ -53,6 +54,34 @@ namespace SimpleApp.Tests
 
             //Assert
             Assert.Equal(data.Products, model, Comparer.Get<Product>((p1, p2) => p1?.Name == p2?.Name && p1?.Price == p2?.Price));
+        }
+
+        [Fact]
+        public void IndexActionModelIsCompleteMock()
+        {
+            //Arrange
+            var controller = new HomeController();
+
+            Product[] testData = new Product[]
+            {
+                new Product { Name="P1", Price = 50M},
+                new Product { Name="P2", Price = 60M},
+                new Product { Name="P3", Price = 70M}
+            };
+
+            var mock = new Mock<IDataSource>();
+
+            mock.SetupGet(m => m.Products).Returns(testData);
+
+            controller.dataSource = mock.Object;
+
+            //Act
+            var model = (controller.Index() as ViewResult)?.ViewData.Model as IEnumerable<Product>;
+
+            //Assert
+            Assert.Equal(testData, model, Comparer.Get<Product>((p1, p2) => p1?.Name == p2?.Name && p1?.Price == p2?.Price));
+
+            mock.VerifyGet(m => m.Products, Times.Once);
         }
     }
 }
